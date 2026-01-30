@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroZone - Electronic Components Delivered Fast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================
+           CSS VARIABLES & RESET
+           ============================ */
+        :root {
+            --primary-electric: #00D9FF;
+            --primary-deep: #0A1929;
+            --primary-navy: #1A2332;
+            --accent-neon: #00FF88;
+            --accent-orange: #FF6B35;
+            --text-primary: #E8EAED;
+            --text-secondary: #8B95A5;
+            --text-dark: #1A2332;
+            --surface-card: #1E2A3A;
+            --surface-hover: #253341;
+            --border-subtle: rgba(0, 217, 255, 0.1);
+            --glow-electric: 0 0 20px rgba(0, 217, 255, 0.3);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(135deg, var(--primary-deep) 0%, #0D1B2A 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============================
+           HEADER & NAVIGATION
+           ============================ */
+        .header {
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .top-bar {
+            background: linear-gradient(90deg, var(--primary-navy) 0%, var(--primary-deep) 100%);
+            padding: 0.5rem 0;
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--accent-neon);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #00D9FF;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .logo:hover {
+            color: #00FF88;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+        }
+
+        .search-location-wrapper {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .location-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            min-width: 220px;
+        }
+
+        .location-selector:hover {
+            background: var(--surface-hover);
+            border-color: var(--primary-electric);
+            box-shadow: var(--glow-electric);
+        }
+
+        .location-icon {
+            font-size: 1.2rem;
+            color: var(--primary-electric);
+        }
+
+        .location-text {
+            flex: 1;
+        }
+
+        .location-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .location-value {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .search-bar {
+            flex: 1;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.9rem 3rem 0.9rem 1.5rem;
+            background: var(--surface-card);
+            border: 2px solid var(--border-subtle);
+            border-radius: 14px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: 'Rajdhani', sans-serif;
+            transition: var(--transition-smooth);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-electric);
+            box-shadow: var(--glow-electric);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            pointer-events: none;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .nav-button:hover {
+            background: var(--surface-card);
+            color: var(--primary-electric);
+        }
+
+        .nav-button-icon {
+            font-size: 1.5rem;
+        }
+
+        .nav-button-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: 0.3rem;
+            right: 0.6rem;
+            background: var(--accent-orange);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        /* ============================
+           HERO SECTION
+           ============================ */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.05) 0%, transparent 70%);
+            animation: pulseGlow 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+            text-shadow: 0 0 30px rgba(0, 217, 255, 0.6), 0 0 60px rgba(0, 217, 255, 0.3);
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            animation: slideInDown 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-subtitle span {
+            color: var(--primary-electric);
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInDown 0.8s ease-out 0.4s backwards;
+        }
+
+        .cta-button {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Rajdhani', sans-serif;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--primary-electric) 0%, var(--accent-neon) 100%);
+            color: var(--primary-deep);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.5);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--primary-electric);
+            border: 2px solid var(--primary-electric);
+        }
+
+        .cta-secondary:hover {
+            background: var(--primary-electric);
+            color: var(--primary-deep);
+            transform: translateY(-3px);
+        }
+
+        /* ============================
+           CATEGORIES SECTION
+           ============================ */
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-electric) 0%, var(--accent-neon) 100%);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            color: var(--primary-electric);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .view-all:hover {
+            gap: 0.8rem;
+            color: var(--accent-neon);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+            transition: var(--transition-smooth);
+            opacity: 0;
+        }
+
+        .category-card:hover::before {
+            opacity: 1;
+            top: -50%;
+            left: -50%;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-electric);
+            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.2);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 10px currentColor);
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-count {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================
+           PRODUCT CARDS
+           ============================ */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-electric);
+            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #1E2A3A 0%, #253341 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 217, 255, 0.03) 2px,
+                    rgba(0, 217, 255, 0.03) 4px
+                );
+        }
+
+        .product-placeholder {
+            font-size: 4rem;
+            color: var(--primary-electric);
+            opacity: 0.3;
+            position: relative;
+            z-index: 1;
+        }
+
+        .delivery-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 255, 136, 0.95);
+            color: var(--primary-deep);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .product-specs {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-electric);
+        }
+
+        .price-currency {
+            font-size: 1.2rem;
+            margin-right: 0.2rem;
+        }
+
+        .add-to-cart {
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-electric) 0%, var(--accent-neon) 100%);
+            color: var(--primary-deep);
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .add-to-cart:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 217, 255, 0.4);
+        }
+
+        /* ============================
+           FEATURED SECTION
+           ============================ */
+        .featured-banner {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--surface-card) 100%);
+            border: 2px solid var(--primary-electric);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.15);
+        }
+
+        .featured-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .featured-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .featured-text h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+
+        .featured-text p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ============================
+           FOOTER
+           ============================ */
+        .footer {
+            background: var(--primary-navy);
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 5rem;
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-electric);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-electric);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* ============================
+           RESPONSIVE DESIGN
+           ============================ */
+        @media (max-width: 1024px) {
+            .nav-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .search-location-wrapper {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .location-selector {
+                width: 100%;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .featured-banner {
+                padding: 2rem;
+            }
+
+            .featured-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .featured-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .nav-actions {
+                gap: 0.5rem;
+            }
+
+            .nav-button {
+                padding: 0.5rem;
+            }
+
+            .nav-button-label {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            .cart-sidebar.active {
+                right: 0;
+            }
+        }
+
+        /* ============================
+           ANIMATIONS & MICRO-INTERACTIONS
+           ============================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .animate-delay-1 { animation-delay: 0.1s; }
+        .animate-delay-2 { animation-delay: 0.2s; }
+        .animate-delay-3 { animation-delay: 0.3s; }
+        .animate-delay-4 { animation-delay: 0.4s; }
+        .animate-delay-5 { animation-delay: 0.5s; }
+        .animate-delay-6 { animation-delay: 0.6s; }
+
+        /* ============================
+           SLIDING CART (Blinkit-style)
+           ============================ */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 450px;
+            height: 100vh;
+            background: var(--primary-navy);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border-left: 2px solid var(--primary-electric);
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--primary-deep);
+        }
+
+        .cart-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-electric);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cart-close {
+            background: transparent;
+            border: 2px solid var(--border-subtle);
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-close:hover {
+            background: var(--surface-card);
+            border-color: var(--primary-electric);
+            color: var(--primary-electric);
+            transform: rotate(90deg);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .cart-empty-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        .cart-empty h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .cart-item {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .cart-item:hover {
+            border-color: var(--primary-electric);
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-deep);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .cart-item-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .cart-item-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .cart-item-specs {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .cart-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .cart-item-price {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-electric);
+        }
+
+        .cart-quantity {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--primary-deep);
+            border-radius: 8px;
+            padding: 0.3rem;
+        }
+
+        .quantity-btn {
+            width: 28px;
+            height: 28px;
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            color: var(--primary-electric);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-btn:hover {
+            background: var(--primary-electric);
+            color: var(--primary-deep);
+            border-color: var(--primary-electric);
+        }
+
+        .quantity-display {
+            font-weight: 700;
+            color: var(--text-primary);
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .cart-footer {
+            padding: 1.5rem 2rem;
+            border-top: 2px solid var(--border-subtle);
+            background: var(--primary-deep);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem 0;
+        }
+
+        .cart-total-label {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .cart-total-amount {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary-electric);
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+        }
+
+        .cart-checkout {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--primary-electric) 0%, var(--accent-neon) 100%);
+            color: var(--primary-deep);
+            border: none;
+            border-radius: 12px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        }
+
+        .cart-checkout:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.5);
+        }
+
+        .cart-checkout:active {
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="top-bar">
+            ⚡ Lightning Fast Delivery • Components in 30 Minutes • Free Shipping Above ₹500
+        </div>
+        <nav class="nav-container">
+            <div class="logo">ElectroZone</div>
+            
+            <div class="search-location-wrapper">
+                <div class="location-selector">
+                    <span class="location-icon">📍</span>
+                    <div class="location-text">
+                        <div class="location-label">Deliver to</div>
+                        <div class="location-value">Bengaluru 560001</div>
+                    </div>
+                    <span style="color: var(--text-secondary);">▼</span>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search for Arduino, ESP32, Sensors, ICs...">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="nav-button">
+                    <span class="nav-button-icon">🛒</span>
+                    <span class="nav-button-label">Cart</span>
+                    <span class="cart-badge">3</span>
+                </button>
+                <button class="nav-button" onclick="window.location.href='Auth.html'">
+                    <span class="nav-button-icon">👤</span>
+                    <span class="nav-button-label">Login</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Electronic Components<br>Delivered Fast</h1>
+            <p class="hero-subtitle">
+                <span>Arduino</span> • <span>ESP32</span> • <span>Sensors</span> • <span>ICs</span> • <span>Modules</span> • <span>Tools</span>
+            </p>
+            <div class="hero-cta">
+                <button class="cta-button cta-primary">Shop Components</button>
+                <button class="cta-button cta-secondary">Explore Categories</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES SECTION -->
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Shop by Category</h2>
+            <a href="#" class="view-all">View All →</a>
+        </div>
+        
+        <div class="categories-grid">
+            <div class="category-card animate-in animate-delay-1">
+                <div class="category-icon" style="color: #00D9FF;">🔌</div>
+                <div class="category-name">Arduino & Boards</div>
+                <div class="category-count">120+ items</div>
+            </div>
+            
+            <div class="category-card animate-in animate-delay-2">
+                <div class="category-icon" style="color: #00FF88;">📡</div>
+                <div class="category-name">ESP32 / ESP8266</div>
+                <div class="category-count">85+ items</div>
+            </div>
+            
+            <div class="category-card animate-in animate-delay-3">
+                <div class="category-icon" style="color: #FF6B35;">🌡️</div>
+                <div class="category-name">Sensors</div>
+                <div class="category-count">200+ items</div>
+            </div>
+            
+            <div class="category-card animate-in animate-delay-4">
+                <div class="category-icon" style="color: #FFD700;">⚙️</div>
+                <div class="category-name">ICs & Chips</div>
+                <div class="category-count">350+ items</div>
+            </div>
+            
+            <div class="category-card animate-in animate-delay-5">
+                <div class="category-icon" style="color: #9D4EDD;">🔧</div>
+                <div class="category-name">Modules</div>
+                <div class="category-count">180+ items</div>
+            </div>
+            
+            <div class="category-card animate-in animate-delay-6">
+                <div class="category-icon" style="color: #06FFA5;">🔋</div>
+                <div class="category-name">Power & Batteries</div>
+                <div class="category-count">95+ items</div>
+            </div>
+            
+            <div class="category-card animate-in animate-delay-1">
+                <div class="category-icon" style="color: #F72585;">🔨</div>
+                <div class="category-name">Tools & Accessories</div>
+                <div class="category-count">140+ items</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED BANNER -->
+    <section class="section">
+        <div class="featured-banner">
+            <div class="featured-content">
+                <div class="featured-text">
+                    <h2>New Arrivals: Raspberry Pi 5</h2>
+                    <p>Faster processing, better connectivity, enhanced graphics</p>
+                    <button class="cta-button cta-primary">Explore Now</button>
+                </div>
+                <div style="font-size: 8rem; opacity: 0.3; color: var(--primary-electric);">🔌</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Popular Components</h2>
+            <a href="#" class="view-all">View All →</a>
+        </div>
+        
+        <div class="products-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="delivery-badge">30 min</div>
+                    <div class="product-placeholder">🔌</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Arduino Uno R3</h3>
+                    <p class="product-specs">ATmega328P • 14 Digital I/O • USB Interface</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-currency">₹</span>599
+                        </div>
+                        <button class="add-to-cart">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="delivery-badge">30 min</div>
+                    <div class="product-placeholder">📡</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">ESP32 DevKit V1</h3>
+                    <p class="product-specs">WiFi + Bluetooth • Dual Core • 240 MHz</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-currency">₹</span>449
+                        </div>
+                        <button class="add-to-cart">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="delivery-badge">45 min</div>
+                    <div class="product-placeholder">🌡️</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">DHT22 Sensor</h3>
+                    <p class="product-specs">Temperature & Humidity • ±0.5°C Accuracy</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-currency">₹</span>189
+                        </div>
+                        <button class="add-to-cart">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="delivery-badge">30 min</div>
+                    <div class="product-placeholder">⚙️</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">L298N Motor Driver</h3>
+                    <p class="product-specs">Dual H-Bridge • 2A Per Channel • 5-35V</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-currency">₹</span>129
+                        </div>
+                        <button class="add-to-cart">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="delivery-badge">30 min</div>
+                    <div class="product-placeholder">🔧</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">HC-05 Bluetooth Module</h3>
+                    <p class="product-specs">Class 2 • 10m Range • UART Interface</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-currency">₹</span>249
+                        </div>
+                        <button class="add-to-cart">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="delivery-badge">45 min</div>
+                    <div class="product-placeholder">🔋</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">18650 Battery Pack</h3>
+                    <p class="product-specs">3.7V 2600mAh • Rechargeable • Li-ion</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-currency">₹</span>299
+                        </div>
+                        <button class="add-to-cart">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 7 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="delivery-badge">30 min</div>
+                    <div class="product-placeholder">💡</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">WS2812B LED Strip</h3>
+                    <p class="product-specs">RGB • Addressable • 60 LEDs/m • 1 Meter</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-currency">₹</span>349
+                        </div>
+                        <button class="add-to-cart">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 8 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="delivery-badge">30 min</div>
+                    <div class="product-placeholder">📏</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">HC-SR04 Ultrasonic</h3>
+                    <p class="product-specs">Distance Sensor • 2-400cm Range • 15mA</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-currency">₹</span>89
+                        </div>
+                        <button class="add-to-cart">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CART SIDEBAR (Blinkit-style) -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>🛒 My Cart</h2>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically rendered here -->
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span class="cart-total-label">Total Amount</span>
+                <span class="cart-total-amount">₹1,237</span>
+            </div>
+            <button class="cart-checkout">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About ElectroZone</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Arduino</a></li>
+                    <li><a href="#">Raspberry Pi</a></li>
+                    <li><a href="#">Sensors</a></li>
+                    <li><a href="#">Development Boards</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            © 2026 ElectroZone. Built for makers, by makers. ⚡
+        </div>
+    </footer>
+
+    <script>
+        // ============================
+        // CART STATE MANAGEMENT
+        // ============================
+        let cart = [
+            { id: 1, name: 'Arduino Uno R3', price: 599, quantity: 1, icon: '🔌', specs: 'ATmega328P • USB Interface' },
+            { id: 2, name: 'ESP32 DevKit V1', price: 449, quantity: 1, icon: '📡', specs: 'WiFi + Bluetooth • Dual Core' },
+            { id: 3, name: 'DHT22 Sensor', price: 189, quantity: 1, icon: '🌡️', specs: 'Temperature & Humidity' }
+        ];
+
+        // ============================
+        // CART FUNCTIONS
+        // ============================
+        function updateCartBadge() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.querySelector('.cart-badge').textContent = totalItems;
+        }
+
+        function updateCartTotal() {
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.querySelector('.cart-total-amount').textContent = `₹${total.toLocaleString('en-IN')}`;
+        }
+
+        function renderCart() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="cart-empty">
+                        <div class="cart-empty-icon">🛒</div>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some components to get started!</p>
+                    </div>
+                `;
+                updateCartTotal();
+                return;
+            }
+
+            cartItemsContainer.innerHTML = cart.map((item, index) => `
+                <div class="cart-item" data-index="${index}">
+                    <div class="cart-item-image">${item.icon}</div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-specs">${item.specs}</div>
+                        <div class="cart-item-footer">
+                            <div class="cart-item-price">₹${item.price}</div>
+                            <div class="cart-quantity">
+                                <button class="quantity-btn decrease-qty" data-index="${index}">−</button>
+                                <span class="quantity-display">${item.quantity}</span>
+                                <button class="quantity-btn increase-qty" data-index="${index}">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            updateCartTotal();
+            attachQuantityListeners();
+        }
+
+        function attachQuantityListeners() {
+            // Increase quantity
+            document.querySelectorAll('.increase-qty').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.getAttribute('data-index'));
+                    cart[index].quantity++;
+                    renderCart();
+                    updateCartBadge();
+                });
+            });
+
+            // Decrease quantity
+            document.querySelectorAll('.decrease-qty').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.getAttribute('data-index'));
+                    if (cart[index].quantity > 1) {
+                        cart[index].quantity--;
+                    } else {
+                        // Remove item if quantity reaches 0
+                        cart.splice(index, 1);
+                    }
+                    renderCart();
+                    updateCartBadge();
+                });
+            });
+        }
+
+        function addToCart(product) {
+            // Check if item already exists in cart
+            const existingItem = cart.find(item => item.id === product.id);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({...product, quantity: 1});
+            }
+            
+            renderCart();
+            updateCartBadge();
+        }
+
+        // ============================
+        // CART SIDEBAR FUNCTIONALITY
+        // ============================
+        const cartButton = document.querySelectorAll('.nav-button')[0];
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const cartClose = document.getElementById('cartClose');
+
+        function openCart() {
+            cartOverlay.classList.add('active');
+            cartSidebar.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            cartOverlay.classList.remove('active');
+            cartSidebar.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        cartButton.addEventListener('click', openCart);
+        cartClose.addEventListener('click', closeCart);
+        cartOverlay.addEventListener('click', closeCart);
+
+        // ============================
+        // PRODUCT DATA
+        // ============================
+        const products = [
+            { id: 4, name: 'Arduino Uno R3', price: 599, icon: '🔌', specs: 'ATmega328P • 14 Digital I/O • USB Interface' },
+            { id: 5, name: 'ESP32 DevKit V1', price: 449, icon: '📡', specs: 'WiFi + Bluetooth • Dual Core • 240 MHz' },
+            { id: 6, name: 'DHT22 Sensor', price: 189, icon: '🌡️', specs: 'Temperature & Humidity • ±0.5°C Accuracy' },
+            { id: 7, name: 'L298N Motor Driver', price: 129, icon: '⚙️', specs: 'Dual H-Bridge • 2A Per Channel • 5-35V' },
+            { id: 8, name: 'HC-05 Bluetooth Module', price: 249, icon: '🔧', specs: 'Class 2 • 10m Range • UART Interface' },
+            { id: 9, name: '18650 Battery Pack', price: 299, icon: '🔋', specs: '3.7V 2600mAh • Rechargeable • Li-ion' },
+            { id: 10, name: 'WS2812B LED Strip', price: 349, icon: '💡', specs: 'RGB • Addressable • 60 LEDs/m • 1 Meter' },
+            { id: 11, name: 'HC-SR04 Ultrasonic', price: 89, icon: '📏', specs: 'Distance Sensor • 2-400cm Range • 15mA' }
+        ];
+
+        // ============================
+        // INITIALIZATION
+        // ============================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize cart
+            renderCart();
+            updateCartBadge();
+
+            // Add staggered animations to product cards
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('animate-in');
+            });
+
+            // Search functionality
+            const searchInput = document.querySelector('.search-input');
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.style.transform = 'scale(1.02)';
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.style.transform = 'scale(1)';
+            });
+
+            // Add to cart functionality with product data
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            addToCartButtons.forEach((button, index) => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    // Get product data
+                    const product = products[index];
+                    
+                    // Add to cart
+                    addToCart(product);
+                    
+                    // Visual feedback
+                    button.textContent = '✓ Added';
+                    button.style.background = 'linear-gradient(135deg, var(--accent-neon) 0%, var(--accent-neon) 100%)';
+                    
+                    // Cart badge animation
+                    const cartBadge = document.querySelector('.cart-badge');
+                    cartBadge.style.transform = 'scale(1.3)';
+                    setTimeout(() => {
+                        cartBadge.style.transform = 'scale(1)';
+                    }, 300);
+                    
+                    // Show notification
+                    showNotification(`${product.name} added to cart!`);
+                    
+                    // Reset button after 2 seconds
+                    setTimeout(() => {
+                        button.textContent = 'Add';
+                        button.style.background = 'linear-gradient(135deg, var(--primary-electric) 0%, var(--accent-neon) 100%)';
+                    }, 2000);
+                });
+            });
+
+            // Checkout button
+            const checkoutBtn = document.querySelector('.cart-checkout');
+            checkoutBtn.addEventListener('click', () => {
+                if (cart.length === 0) {
+                    showNotification('Your cart is empty!');
+                    return;
+                }
+                showNotification('Proceeding to checkout... 🚀');
+                // In a real app, this would redirect to checkout page
+            });
+
+            // Category card interactions
+            const categoryCards = document.querySelectorAll('.category-card');
+            categoryCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const categoryName = card.querySelector('.category-name').textContent;
+                    showNotification(`Browsing ${categoryName}...`);
+                });
+            });
+
+            // Product card interactions
+            productCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('add-to-cart')) {
+                        const productName = card.querySelector('.product-name').textContent;
+                        showNotification(`Viewing ${productName}...`);
+                    }
+                });
+            });
+
+            // Location selector interaction
+            const locationSelector = document.querySelector('.location-selector');
+            locationSelector.addEventListener('click', () => {
+                showNotification('Select your delivery location');
+            });
+
+            // CTA button interactions
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if (button.textContent.includes('Shop')) {
+                        document.querySelector('.products-grid').scrollIntoView({ behavior: 'smooth' });
+                    } else if (button.textContent.includes('Categories')) {
+                        document.querySelector('.categories-grid').scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        showNotification('Exploring new products... 🔍');
+                    }
+                });
+            });
+
+            // Parallax effect on hero
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                if (hero && scrolled < 800) {
+                    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    hero.style.opacity = Math.max(0.3, 1 - scrolled / 600);
+                }
+            });
+
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(section);
+            });
+        });
+
+        // ============================
+        // NOTIFICATION SYSTEM
+        // ============================
+        function showNotification(message) {
+            // Remove existing notification
+            const existing = document.querySelector('.notification');
+            if (existing) existing.remove();
+
+            // Create notification
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                background: linear-gradient(135deg, var(--primary-electric) 0%, var(--accent-neon) 100%);
+                color: var(--primary-deep);
+                padding: 1rem 1.5rem;
+                border-radius: 12px;
+                font-weight: 700;
+                font-size: 0.95rem;
+                box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
+                z-index: 10000;
+                animation: slideInUp 0.3s ease-out;
+            `;
+
+            document.body.appendChild(notification);
+
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOutDown 0.3s ease-out';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Add notification animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInUp {
+                from { transform: translateY(100px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            @keyframes slideOutDown {
+                from { transform: translateY(0); opacity: 1; }
+                to { transform: translateY(100px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Prevent default form submission
+        document.addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
