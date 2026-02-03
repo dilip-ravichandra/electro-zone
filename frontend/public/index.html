@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroZone - Electronic Components Delivered Fast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/auth.css">
+    <style>
+        /* Home-specific styles */
+        .header {
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-electric);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+
+        .user-info {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .user-info button {
+            width: auto;
+            padding: 0.5rem 1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: rgba(30, 42, 58, 0.8);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.2);
+        }
+
+        .product-card h3 {
+            color: var(--primary-electric);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .product-card button {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">ElectroZone</div>
+        <div class="user-info">
+            <span>Welcome, <span id="userName">User</span>!</span>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+    </div>
+
+    <div class="products-grid" id="productsContainer">
+        <p>Loading products...</p>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/authGuard.js"></script>
+</body>
+</html>

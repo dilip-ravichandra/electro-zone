@@ -1,0 +1,111 @@
+/* ============================
+   CSS VARIABLES (MATCHING ELECTROZONE THEME)
+   ============================ */
+:root {
+    --primary-electric: #00D9FF;
+    --primary-deep: #0A1929;
+    --primary-navy: #1A2332;
+    --accent-neon: #00FF88;
+    --accent-orange: #FF6B35;
+    --text-primary: #E8EAED;
+    --text-secondary: #8B95A5;
+    --text-dark: #1A2332;
+    --surface-card: #1E2A3A;
+    --surface-hover: #253341;
+    --border-subtle: rgba(0, 217, 255, 0.1);
+    --glow-electric: 0 0 20px rgba(0, 217, 255, 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, var(--primary-deep) 0%, #0D1B2A 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ============================
+   AUTH FORM STYLES
+   ============================ */
+.auth-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.auth-form {
+    background: rgba(30, 42, 58, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 217, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(26, 35, 50, 0.5);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-electric);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, var(--primary-electric), var(--accent-neon));
+    border: none;
+    border-radius: 6px;
+    color: var(--text-dark);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 217, 255, 0.4);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.form-footer a {
+    color: var(--primary-electric);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}

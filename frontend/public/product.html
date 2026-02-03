@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ElectroZone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/auth.css">
+    <style>
+        /* Product-specific styles */
+        .header {
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-electric);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .navigation a {
+            color: var(--text-primary);
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .navigation a:hover {
+            color: var(--primary-electric);
+        }
+
+        .filter-section {
+            padding: 2rem;
+            background: rgba(30, 42, 58, 0.5);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: rgba(30, 42, 58, 0.8);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.2);
+        }
+
+        .product-card h3 {
+            color: var(--primary-electric);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card .category {
+            color: var(--accent-neon);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .stock {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .product-card button {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo" onclick="window.location.href='/public/index.html'">ElectroZone</div>
+        <div class="navigation">
+            <a href="/public/index.html">Home</a>
+            <a href="/public/product.html">Products</a>
+            <a href="#" onclick="logoutUser()">Logout</a>
+        </div>
+    </div>
+
+    <div class="filter-section">
+        <h3>Filter by Category</h3>
+        <!-- Filter options can be added here -->
+    </div>
+
+    <div class="products-grid" id="productsContainer">
+        <p>Loading products...</p>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/authGuard.js"></script>
+</body>
+</html>
